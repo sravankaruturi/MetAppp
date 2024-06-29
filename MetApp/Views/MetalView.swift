@@ -56,8 +56,6 @@ struct MetalView: NSViewRepresentable {
         
         var vertexBuffer: MTLBuffer!
         
-        var renderPipelineState: MTLRenderPipelineState!
-        
         init(_ parent: MetalView) {
             
             self.parent = parent
@@ -68,7 +66,6 @@ struct MetalView: NSViewRepresentable {
         func setup() {
             
             createVertices()
-            createRenderPipeLineState()
             createBuffers()
             
         }
@@ -93,39 +90,6 @@ struct MetalView: NSViewRepresentable {
             
         }
         
-        func createRenderPipeLineState(){
-            
-            let vertexDescriptor = MTLVertexDescriptor()
-            
-            // Position
-            vertexDescriptor.attributes[0].format = .float3
-            vertexDescriptor.attributes[0].bufferIndex = 0
-            vertexDescriptor.attributes[0].offset = 0
-            
-            // Color
-            vertexDescriptor.attributes[1].format = .float4
-            vertexDescriptor.attributes[1].bufferIndex = 0
-            vertexDescriptor.attributes[1].offset = SIMD3<Float>.size()
-            
-            vertexDescriptor.layouts[0].stride = Vertex.stride()
-            
-            
-            let rpd = MTLRenderPipelineDescriptor()
-            rpd.colorAttachments[0].pixelFormat = Prefs.MainPixelFormat
-            rpd.vertexFunction = ShaderLibrary.getVertexShaderFunction(.Basic)
-            rpd.fragmentFunction = ShaderLibrary.getFragmentShaderFunction(.Basic)
-            rpd.vertexDescriptor = vertexDescriptor
-            
-            do {
-                renderPipelineState = try Engine.Device.makeRenderPipelineState(descriptor: rpd)
-                print("Render Pipeline State Set")
-            }catch{
-                print(error)
-            }
-            
-        }
-        
-        
         func draw(in view: MTKView) {
             
             guard let drawable = view.currentDrawable else {
@@ -141,7 +105,7 @@ struct MetalView: NSViewRepresentable {
             
             
             let re = commandBuffer?.makeRenderCommandEncoder(descriptor: rpd!)
-            re?.setRenderPipelineState(renderPipelineState)
+            re?.setRenderPipelineState(RenderPipelineStateLibrary.getRenderPipelineState(.Basic))
             
             // Send Info to render command encoder.
             re?.setVertexBuffer(vertexBuffer, offset: 0, index: 0)

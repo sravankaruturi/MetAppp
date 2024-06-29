@@ -17,6 +17,10 @@ class Engine {
         self.CommandQueue = device.makeCommandQueue()
         
         ShaderLibrary.setup()
+        VertexDescriptorLibrary.setup()
+        RenderPipeLineDescriptorLibrary.setup()
+        RenderPipelineStateLibrary.setup()
+        
     }
     
 }

@@ -18,7 +18,7 @@ struct RasterizerData {
     simd_float4 color;
 };
 
-vertex RasterizerData vertex_shader( const vertexIn vIn [[ stage_in ]]){
+vertex RasterizerData basic_vertex_shader( const vertexIn vIn [[ stage_in ]]){
     
     RasterizerData rd;
     rd.position = float4(vIn.position, 1);
@@ -30,7 +30,7 @@ vertex RasterizerData vertex_shader( const vertexIn vIn [[ stage_in ]]){
 
 
 
-fragment half4 fragment_shader( RasterizerData rd [[ stage_in ]] ) {
+fragment half4 basic_fragment_shader( RasterizerData rd [[ stage_in ]] ) {
     
     float4 color = rd.color;
     

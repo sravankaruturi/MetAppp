@@ -14,6 +14,9 @@ class Engine {
     
     public static func Setup(device: MTLDevice) {
         self.Device = device
+        self.CommandQueue = device.makeCommandQueue()
+        
+        ShaderLibrary.setup()
     }
     
 }

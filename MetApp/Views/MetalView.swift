@@ -67,8 +67,6 @@ struct MetalView: NSViewRepresentable {
         
         func setup() {
             
-            Engine.CommandQueue = Engine.Device.makeCommandQueue()!
-            
             createVertices()
             createRenderPipeLineState()
             createBuffers()
@@ -97,11 +95,6 @@ struct MetalView: NSViewRepresentable {
         
         func createRenderPipeLineState(){
             
-            let library = Engine.Device.makeDefaultLibrary()
-            
-            let vertexFunction = library?.makeFunction(name: "vertex_shader")
-            let fragmentFunction = library?.makeFunction(name: "fragment_shader")
-            
             let vertexDescriptor = MTLVertexDescriptor()
             
             // Position
@@ -119,8 +112,8 @@ struct MetalView: NSViewRepresentable {
             
             let rpd = MTLRenderPipelineDescriptor()
             rpd.colorAttachments[0].pixelFormat = Prefs.MainPixelFormat
-            rpd.vertexFunction = vertexFunction
-            rpd.fragmentFunction = fragmentFunction
+            rpd.vertexFunction = ShaderLibrary.getVertexShaderFunction(.Basic)
+            rpd.fragmentFunction = ShaderLibrary.getFragmentShaderFunction(.Basic)
             rpd.vertexDescriptor = vertexDescriptor
             
             do {

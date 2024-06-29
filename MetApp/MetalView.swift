@@ -47,15 +47,16 @@ struct MetalView: NSViewRepresentable {
     
     class Coordinator : NSObject, MTKViewDelegate {
         
+        struct Vertex {
+            var position: SIMD3<Float>
+            var color: SIMD4<Float>
+        }
+        
         var parent: MetalView
         var metalDevice: MTLDevice!
         var metalCommandQueue: MTLCommandQueue!
         
-        let vertexArray: [SIMD3<Float>] = [
-            SIMD3(x: 0, y: 1, z: 0),
-            SIMD3(x: -1, y: -1, z: 0),
-            SIMD3(x: 1, y: -1, z: 0)
-        ]
+        var vertices: [Vertex]!
         
         var vertexBuffer: MTLBuffer!
         
@@ -71,6 +72,8 @@ struct MetalView: NSViewRepresentable {
             self.metalCommandQueue = metalDevice.makeCommandQueue()!
             super.init()
             
+            createVertices()
+            
             createRenderPipeLineState()
             createBuffers()
             
@@ -81,7 +84,19 @@ struct MetalView: NSViewRepresentable {
         }
         
         func createBuffers(){
-            vertexBuffer = metalDevice.makeBuffer(bytes: vertexArray, length: MemoryLayout<SIMD3<Float>>.size * vertexArray.count, options: [])
+            vertexBuffer = metalDevice.makeBuffer(bytes: vertices, length: MemoryLayout<Vertex>.size * vertices.count, options: [])
+        }
+        
+        func createVertices() {
+            
+            vertices = [
+                
+                Vertex(position: [0, 1, 0], color: [1, 0, 0, 1]),
+                Vertex(position: [-1, -1, 0], color: [0, 1, 0, 1]),
+                Vertex(position: [1, -1, 0], color: [0, 0, 1, 1])
+                
+                ]
+            
         }
         
         func createRenderPipeLineState(){
@@ -125,7 +140,7 @@ struct MetalView: NSViewRepresentable {
             
             // Send Info to render command encoder.
             re?.setVertexBuffer(vertexBuffer, offset: 0, index: 0)
-            re?.drawPrimitives(type: .triangle, vertexStart: 0, vertexCount: vertexArray.count)
+            re?.drawPrimitives(type: .triangle, vertexStart: 0, vertexCount: vertices.count)
             
             re?.endEncoding()
             

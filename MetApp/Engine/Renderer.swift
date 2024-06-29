@@ -9,10 +9,11 @@ import MetalKit
 import SwiftUI
 
 class Renderer: NSObject {
+    
     var entity: Entity
     
     override init() {
-        self.entity = Entity()
+        self.entity = Player()
         super.init()
     }
     
@@ -44,7 +45,7 @@ extension Renderer: MTKViewDelegate {
         
         let re = commandBuffer?.makeRenderCommandEncoder(descriptor: rpd!)
         
-        entity.draw(re: re!)
+        entity.render(renderCommandEncoder: re!)
         
         re?.endEncoding()
         

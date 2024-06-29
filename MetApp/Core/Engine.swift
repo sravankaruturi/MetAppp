@@ -20,6 +20,7 @@ class Engine {
         VertexDescriptorLibrary.setup()
         RenderPipeLineDescriptorLibrary.setup()
         RenderPipelineStateLibrary.setup()
+        MeshLibrary.setup()
         
     }
     

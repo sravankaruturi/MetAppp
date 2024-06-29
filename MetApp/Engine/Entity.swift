@@ -7,34 +7,33 @@
 
 import MetalKit
 
-class Entity {
-    var vertices: [Vertex]!
-    var vertexBuffer: MTLBuffer?
+class Entity : Node {
     
-    init() {
-        createVertices()
+    var mesh: Mesh!
+    var meshType: MeshTypes
+    
+    init(meshType: MeshTypes) {
+        self.meshType = meshType
     }
     
     func createBuffers(device: MTLDevice) {
-        vertexBuffer = device.makeBuffer(bytes: vertices, length: Vertex.size() * vertices.count, options: [])
+        mesh = MeshLibrary.getMesh(.Rectangle_Custom)
+        mesh.createBuffers(device: device)
     }
+
+}
+
+extension Entity : Renderable {
     
-    func draw(re: MTLRenderCommandEncoder) {
-        guard let vertexBuffer = vertexBuffer else {
+    func doRender(_ renderCommandEncoder: any MTLRenderCommandEncoder) {
+        guard let vertexBuffer = mesh.vertexBuffer else {
             print("Vertex buffer not initialized")
             return
         }
         
-        re.setRenderPipelineState(RenderPipelineStateLibrary.getRenderPipelineState(.Basic))
-        re.setVertexBuffer(vertexBuffer, offset: 0, index: 0)
-        re.drawPrimitives(type: .triangle, vertexStart: 0, vertexCount: vertices.count)
+        renderCommandEncoder.setRenderPipelineState(RenderPipelineStateLibrary.getRenderPipelineState(.Basic))
+        renderCommandEncoder.setVertexBuffer(vertexBuffer, offset: 0, index: 0)
+        renderCommandEncoder.drawPrimitives(type: .triangle, vertexStart: 0, vertexCount: mesh.vertexCount)
     }
     
-    func createVertices() {
-        vertices = [
-            Vertex(position: [0, 1, 0], color: [1, 0, 0, 1]),
-            Vertex(position: [-1, -1, 0], color: [0, 1, 0, 1]),
-            Vertex(position: [1, -1, 0], color: [0, 0, 1, 1])
-        ]
-    }
 }

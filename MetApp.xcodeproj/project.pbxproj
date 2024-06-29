@@ -16,6 +16,10 @@
 		F6013A332C3086760087757C /* RenderPipelineStateLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6013A322C30866D0087757C /* RenderPipelineStateLibrary.swift */; };
 		F6013A352C3099820087757C /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6013A342C30997A0087757C /* Entity.swift */; };
 		F6013A372C309B1E0087757C /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6013A362C309B1A0087757C /* Renderer.swift */; };
+		F6013A392C30A40C0087757C /* MeshLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6013A382C30A4080087757C /* MeshLibrary.swift */; };
+		F6013A3B2C30AAC50087757C /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6013A3A2C30AAC30087757C /* Player.swift */; };
+		F6013A3D2C30AB3B0087757C /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6013A3C2C30AB3A0087757C /* Node.swift */; };
+		F6013A3F2C30ABCC0087757C /* Renderable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6013A3E2C30ABC90087757C /* Renderable.swift */; };
 		F65C4C172C2F8BCA007D7F9D /* MetAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65C4C162C2F8BCA007D7F9D /* MetAppApp.swift */; };
 		F65C4C192C2F8BCA007D7F9D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65C4C182C2F8BCA007D7F9D /* ContentView.swift */; };
 		F65C4C1B2C2F8BCA007D7F9D /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65C4C1A2C2F8BCA007D7F9D /* Item.swift */; };
@@ -55,6 +59,10 @@
 		F6013A322C30866D0087757C /* RenderPipelineStateLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenderPipelineStateLibrary.swift; sourceTree = "<group>"; };
 		F6013A342C30997A0087757C /* Entity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
 		F6013A362C309B1A0087757C /* Renderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Renderer.swift; sourceTree = "<group>"; };
+		F6013A382C30A4080087757C /* MeshLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeshLibrary.swift; sourceTree = "<group>"; };
+		F6013A3A2C30AAC30087757C /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		F6013A3C2C30AB3A0087757C /* Node.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
+		F6013A3E2C30ABC90087757C /* Renderable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Renderable.swift; sourceTree = "<group>"; };
 		F65C4C132C2F8BCA007D7F9D /* MetApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MetApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F65C4C162C2F8BCA007D7F9D /* MetAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetAppApp.swift; sourceTree = "<group>"; };
 		F65C4C182C2F8BCA007D7F9D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -109,6 +117,10 @@
 		F6013A252C3077890087757C /* Engine */ = {
 			isa = PBXGroup;
 			children = (
+				F6013A3E2C30ABC90087757C /* Renderable.swift */,
+				F6013A3C2C30AB3A0087757C /* Node.swift */,
+				F6013A3A2C30AAC30087757C /* Player.swift */,
+				F6013A382C30A4080087757C /* MeshLibrary.swift */,
 				F6013A362C309B1A0087757C /* Renderer.swift */,
 				F6013A342C30997A0087757C /* Entity.swift */,
 				F6013A322C30866D0087757C /* RenderPipelineStateLibrary.swift */,
@@ -330,11 +342,15 @@
 				F65C4C442C2F8E19007D7F9D /* MetalView.swift in Sources */,
 				F6013A2D2C307FEE0087757C /* ShaderLibrary.swift in Sources */,
 				F6013A372C309B1E0087757C /* Renderer.swift in Sources */,
+				F6013A3F2C30ABCC0087757C /* Renderable.swift in Sources */,
 				F65C4C192C2F8BCA007D7F9D /* ContentView.swift in Sources */,
+				F6013A3B2C30AAC50087757C /* Player.swift in Sources */,
 				F65C4C1B2C2F8BCA007D7F9D /* Item.swift in Sources */,
 				F6013A2F2C3083D30087757C /* VertexDescriptorLibrary.swift in Sources */,
+				F6013A392C30A40C0087757C /* MeshLibrary.swift in Sources */,
 				F6013A232C30705D0087757C /* Types.swift in Sources */,
 				F6013A332C3086760087757C /* RenderPipelineStateLibrary.swift in Sources */,
+				F6013A3D2C30AB3B0087757C /* Node.swift in Sources */,
 				F6013A312C30852A0087757C /* RenderPipeLineDescriptorLibrary.swift in Sources */,
 				F65C4C482C2F9430007D7F9D /* MyShaders.metal in Sources */,
 				F65C4C172C2F8BCA007D7F9D /* MetAppApp.swift in Sources */,

@@ -47,11 +47,6 @@ struct MetalView: NSViewRepresentable {
     
     class Coordinator : NSObject, MTKViewDelegate {
         
-        struct Vertex {
-            var position: SIMD3<Float>
-            var color: SIMD4<Float>
-        }
-        
         var parent: MetalView
         var metalDevice: MTLDevice!
         var metalCommandQueue: MTLCommandQueue!
@@ -84,7 +79,7 @@ struct MetalView: NSViewRepresentable {
         }
         
         func createBuffers(){
-            vertexBuffer = metalDevice.makeBuffer(bytes: vertices, length: MemoryLayout<Vertex>.size * vertices.count, options: [])
+            vertexBuffer = metalDevice.makeBuffer(bytes: vertices, length: Vertex.size() * vertices.count, options: [])
         }
         
         func createVertices() {
@@ -106,10 +101,26 @@ struct MetalView: NSViewRepresentable {
             let vertexFunction = library?.makeFunction(name: "vertex_shader")
             let fragmentFunction = library?.makeFunction(name: "fragment_shader")
             
+            let vertexDescriptor = MTLVertexDescriptor()
+            
+            // Position
+            vertexDescriptor.attributes[0].format = .float3
+            vertexDescriptor.attributes[0].bufferIndex = 0
+            vertexDescriptor.attributes[0].offset = 0
+            
+            // Color
+            vertexDescriptor.attributes[1].format = .float4
+            vertexDescriptor.attributes[1].bufferIndex = 0
+            vertexDescriptor.attributes[1].offset = SIMD3<Float>.size()
+            
+            vertexDescriptor.layouts[0].stride = Vertex.stride()
+            
+            
             let rpd = MTLRenderPipelineDescriptor()
             rpd.colorAttachments[0].pixelFormat = .bgra8Unorm
             rpd.vertexFunction = vertexFunction
             rpd.fragmentFunction = fragmentFunction
+            rpd.vertexDescriptor = vertexDescriptor
             
             do {
                 renderPipelineState = try metalDevice.makeRenderPipelineState(descriptor: rpd)

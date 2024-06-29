@@ -27,7 +27,10 @@ struct MetalView: NSViewRepresentable {
         if let metalDevice = MTLCreateSystemDefaultDevice() {
             print(metalDevice)
             mtkView.device = metalDevice
+            Engine.Setup(device: metalDevice)
         }
+        
+        context.coordinator.setup()
         
         mtkView.framebufferOnly = false
         
@@ -48,7 +51,6 @@ struct MetalView: NSViewRepresentable {
     class Coordinator : NSObject, MTKViewDelegate {
         
         var parent: MetalView
-        var metalDevice: MTLDevice!
         var metalCommandQueue: MTLCommandQueue!
         
         var vertices: [Vertex]!
@@ -60,15 +62,15 @@ struct MetalView: NSViewRepresentable {
         init(_ parent: MetalView) {
             
             self.parent = parent
-            if let metalDevice = MTLCreateSystemDefaultDevice() {
-                self.metalDevice = metalDevice
-            }
-            
-            self.metalCommandQueue = metalDevice.makeCommandQueue()!
             super.init()
             
-            createVertices()
+        }
+        
+        func setup() {
             
+            self.metalCommandQueue = Engine.Device.makeCommandQueue()!
+            
+            createVertices()
             createRenderPipeLineState()
             createBuffers()
             
@@ -79,7 +81,7 @@ struct MetalView: NSViewRepresentable {
         }
         
         func createBuffers(){
-            vertexBuffer = metalDevice.makeBuffer(bytes: vertices, length: Vertex.size() * vertices.count, options: [])
+            vertexBuffer = Engine.Device.makeBuffer(bytes: vertices, length: Vertex.size() * vertices.count, options: [])
         }
         
         func createVertices() {
@@ -96,7 +98,7 @@ struct MetalView: NSViewRepresentable {
         
         func createRenderPipeLineState(){
             
-            let library = metalDevice.makeDefaultLibrary()
+            let library = Engine.Device.makeDefaultLibrary()
             
             let vertexFunction = library?.makeFunction(name: "vertex_shader")
             let fragmentFunction = library?.makeFunction(name: "fragment_shader")
@@ -123,7 +125,7 @@ struct MetalView: NSViewRepresentable {
             rpd.vertexDescriptor = vertexDescriptor
             
             do {
-                renderPipelineState = try metalDevice.makeRenderPipelineState(descriptor: rpd)
+                renderPipelineState = try Engine.Device.makeRenderPipelineState(descriptor: rpd)
                 print("Render Pipeline State Set")
             }catch{
                 print(error)

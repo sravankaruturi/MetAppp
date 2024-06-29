@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F6013A232C30705D0087757C /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6013A222C3070590087757C /* Types.swift */; };
+		F6013A292C3078670087757C /* Engine.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6013A282C3078650087757C /* Engine.swift */; };
 		F65C4C172C2F8BCA007D7F9D /* MetAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65C4C162C2F8BCA007D7F9D /* MetAppApp.swift */; };
 		F65C4C192C2F8BCA007D7F9D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65C4C182C2F8BCA007D7F9D /* ContentView.swift */; };
 		F65C4C1B2C2F8BCA007D7F9D /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65C4C1A2C2F8BCA007D7F9D /* Item.swift */; };
@@ -39,6 +40,7 @@
 
 /* Begin PBXFileReference section */
 		F6013A222C3070590087757C /* Types.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
+		F6013A282C3078650087757C /* Engine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Engine.swift; sourceTree = "<group>"; };
 		F65C4C132C2F8BCA007D7F9D /* MetApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MetApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F65C4C162C2F8BCA007D7F9D /* MetAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetAppApp.swift; sourceTree = "<group>"; };
 		F65C4C182C2F8BCA007D7F9D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -80,6 +82,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F6013A242C30777E0087757C /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				F6013A282C3078650087757C /* Engine.swift */,
+				F6013A222C3070590087757C /* Types.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		F6013A252C3077890087757C /* Engine */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Engine;
+			sourceTree = "<group>";
+		};
+		F6013A262C30779A0087757C /* Shaders */ = {
+			isa = PBXGroup;
+			children = (
+				F65C4C472C2F9430007D7F9D /* MyShaders.metal */,
+			);
+			path = Shaders;
+			sourceTree = "<group>";
+		};
+		F6013A272C3077A70087757C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F65C4C162C2F8BCA007D7F9D /* MetAppApp.swift */,
+				F65C4C432C2F8E14007D7F9D /* MetalView.swift */,
+				F65C4C182C2F8BCA007D7F9D /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		F65C4C0A2C2F8BCA007D7F9D = {
 			isa = PBXGroup;
 			children = (
@@ -103,15 +139,14 @@
 		F65C4C152C2F8BCA007D7F9D /* MetApp */ = {
 			isa = PBXGroup;
 			children = (
-				F6013A222C3070590087757C /* Types.swift */,
-				F65C4C432C2F8E14007D7F9D /* MetalView.swift */,
-				F65C4C162C2F8BCA007D7F9D /* MetAppApp.swift */,
-				F65C4C182C2F8BCA007D7F9D /* ContentView.swift */,
+				F6013A242C30777E0087757C /* Core */,
+				F6013A252C3077890087757C /* Engine */,
+				F6013A272C3077A70087757C /* Views */,
+				F6013A262C30779A0087757C /* Shaders */,
 				F65C4C1A2C2F8BCA007D7F9D /* Item.swift */,
 				F65C4C1C2C2F8BCB007D7F9D /* Assets.xcassets */,
 				F65C4C212C2F8BCB007D7F9D /* MetApp.entitlements */,
 				F65C4C1E2C2F8BCB007D7F9D /* Preview Content */,
-				F65C4C472C2F9430007D7F9D /* MyShaders.metal */,
 			);
 			path = MetApp;
 			sourceTree = "<group>";
@@ -277,6 +312,7 @@
 				F6013A232C30705D0087757C /* Types.swift in Sources */,
 				F65C4C482C2F9430007D7F9D /* MyShaders.metal in Sources */,
 				F65C4C172C2F8BCA007D7F9D /* MetAppApp.swift in Sources */,
+				F6013A292C3078670087757C /* Engine.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

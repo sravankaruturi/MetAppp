@@ -20,6 +20,7 @@
 		F6013A3B2C30AAC50087757C /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6013A3A2C30AAC30087757C /* Player.swift */; };
 		F6013A3D2C30AB3B0087757C /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6013A3C2C30AB3A0087757C /* Node.swift */; };
 		F6013A3F2C30ABCC0087757C /* Renderable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6013A3E2C30ABC90087757C /* Renderable.swift */; };
+		F6013A432C30B4D80087757C /* Matrices.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6013A422C30B4D30087757C /* Matrices.swift */; };
 		F65C4C172C2F8BCA007D7F9D /* MetAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65C4C162C2F8BCA007D7F9D /* MetAppApp.swift */; };
 		F65C4C192C2F8BCA007D7F9D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65C4C182C2F8BCA007D7F9D /* ContentView.swift */; };
 		F65C4C1B2C2F8BCA007D7F9D /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65C4C1A2C2F8BCA007D7F9D /* Item.swift */; };
@@ -64,6 +65,7 @@
 		F6013A3C2C30AB3A0087757C /* Node.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
 		F6013A3E2C30ABC90087757C /* Renderable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Renderable.swift; sourceTree = "<group>"; };
 		F6013A402C30ADC20087757C /* Readme.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
+		F6013A422C30B4D30087757C /* Matrices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Matrices.swift; sourceTree = "<group>"; };
 		F65C4C132C2F8BCA007D7F9D /* MetApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MetApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F65C4C162C2F8BCA007D7F9D /* MetAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetAppApp.swift; sourceTree = "<group>"; };
 		F65C4C182C2F8BCA007D7F9D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -150,6 +152,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		F6013A412C30B4CB0087757C /* Math */ = {
+			isa = PBXGroup;
+			children = (
+				F6013A422C30B4D30087757C /* Matrices.swift */,
+			);
+			path = Math;
+			sourceTree = "<group>";
+		};
 		F65C4C0A2C2F8BCA007D7F9D = {
 			isa = PBXGroup;
 			children = (
@@ -174,6 +184,7 @@
 		F65C4C152C2F8BCA007D7F9D /* MetApp */ = {
 			isa = PBXGroup;
 			children = (
+				F6013A412C30B4CB0087757C /* Math */,
 				F6013A242C30777E0087757C /* Core */,
 				F6013A252C3077890087757C /* Engine */,
 				F6013A272C3077A70087757C /* Views */,
@@ -350,6 +361,7 @@
 				F65C4C1B2C2F8BCA007D7F9D /* Item.swift in Sources */,
 				F6013A2F2C3083D30087757C /* VertexDescriptorLibrary.swift in Sources */,
 				F6013A392C30A40C0087757C /* MeshLibrary.swift in Sources */,
+				F6013A432C30B4D80087757C /* Matrices.swift in Sources */,
 				F6013A232C30705D0087757C /* Types.swift in Sources */,
 				F6013A332C3086760087757C /* RenderPipelineStateLibrary.swift in Sources */,
 				F6013A3D2C30AB3B0087757C /* Node.swift in Sources */,

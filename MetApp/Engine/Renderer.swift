@@ -42,8 +42,9 @@ extension Renderer: MTKViewDelegate {
         rpd?.colorAttachments[0].loadAction = .clear
         rpd?.colorAttachments[0].storeAction = .store
         
-        
         let re = commandBuffer?.makeRenderCommandEncoder(descriptor: rpd!)
+        
+        entity.update(deltaTime: 1.0/60)
         
         entity.render(renderCommandEncoder: re!)
         

@@ -4,6 +4,7 @@
 //
 //  Created by Sravan Karuturi on 6/29/24.
 //
+import simd
 
 protocol sizeable {
     
@@ -39,8 +40,18 @@ struct Vertex : sizeable {
     
 }
 
+extension Float : sizeable {
+    
+}
+
 extension SIMD3 : sizeable {
     
     
+    
+}
+
+struct ModelConstants: sizeable {
+    
+    var modelMatrix = matrix_identity_float4x4
     
 }

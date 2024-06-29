@@ -20,7 +20,7 @@ struct MetalView: NSViewRepresentable {
         let mtkView = MTKView()
         
         mtkView.preferredFramesPerSecond = 60
-        mtkView.enableSetNeedsDisplay = true // Maybe not what we want
+        mtkView.enableSetNeedsDisplay = false
         
         if let metalDevice = MTLCreateSystemDefaultDevice() {
             mtkView.device = metalDevice

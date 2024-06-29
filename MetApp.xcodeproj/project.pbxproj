@@ -14,6 +14,8 @@
 		F6013A2F2C3083D30087757C /* VertexDescriptorLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6013A2E2C3083CA0087757C /* VertexDescriptorLibrary.swift */; };
 		F6013A312C30852A0087757C /* RenderPipeLineDescriptorLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6013A302C3085210087757C /* RenderPipeLineDescriptorLibrary.swift */; };
 		F6013A332C3086760087757C /* RenderPipelineStateLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6013A322C30866D0087757C /* RenderPipelineStateLibrary.swift */; };
+		F6013A352C3099820087757C /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6013A342C30997A0087757C /* Entity.swift */; };
+		F6013A372C309B1E0087757C /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6013A362C309B1A0087757C /* Renderer.swift */; };
 		F65C4C172C2F8BCA007D7F9D /* MetAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65C4C162C2F8BCA007D7F9D /* MetAppApp.swift */; };
 		F65C4C192C2F8BCA007D7F9D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65C4C182C2F8BCA007D7F9D /* ContentView.swift */; };
 		F65C4C1B2C2F8BCA007D7F9D /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65C4C1A2C2F8BCA007D7F9D /* Item.swift */; };
@@ -51,6 +53,8 @@
 		F6013A2E2C3083CA0087757C /* VertexDescriptorLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VertexDescriptorLibrary.swift; sourceTree = "<group>"; };
 		F6013A302C3085210087757C /* RenderPipeLineDescriptorLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenderPipeLineDescriptorLibrary.swift; sourceTree = "<group>"; };
 		F6013A322C30866D0087757C /* RenderPipelineStateLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenderPipelineStateLibrary.swift; sourceTree = "<group>"; };
+		F6013A342C30997A0087757C /* Entity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
+		F6013A362C309B1A0087757C /* Renderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Renderer.swift; sourceTree = "<group>"; };
 		F65C4C132C2F8BCA007D7F9D /* MetApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MetApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F65C4C162C2F8BCA007D7F9D /* MetAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetAppApp.swift; sourceTree = "<group>"; };
 		F65C4C182C2F8BCA007D7F9D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -105,6 +109,8 @@
 		F6013A252C3077890087757C /* Engine */ = {
 			isa = PBXGroup;
 			children = (
+				F6013A362C309B1A0087757C /* Renderer.swift */,
+				F6013A342C30997A0087757C /* Entity.swift */,
 				F6013A322C30866D0087757C /* RenderPipelineStateLibrary.swift */,
 				F6013A302C3085210087757C /* RenderPipeLineDescriptorLibrary.swift */,
 				F6013A2E2C3083CA0087757C /* VertexDescriptorLibrary.swift */,
@@ -323,6 +329,7 @@
 			files = (
 				F65C4C442C2F8E19007D7F9D /* MetalView.swift in Sources */,
 				F6013A2D2C307FEE0087757C /* ShaderLibrary.swift in Sources */,
+				F6013A372C309B1E0087757C /* Renderer.swift in Sources */,
 				F65C4C192C2F8BCA007D7F9D /* ContentView.swift in Sources */,
 				F65C4C1B2C2F8BCA007D7F9D /* Item.swift in Sources */,
 				F6013A2F2C3083D30087757C /* VertexDescriptorLibrary.swift in Sources */,
@@ -331,6 +338,7 @@
 				F6013A312C30852A0087757C /* RenderPipeLineDescriptorLibrary.swift in Sources */,
 				F65C4C482C2F9430007D7F9D /* MyShaders.metal in Sources */,
 				F65C4C172C2F8BCA007D7F9D /* MetAppApp.swift in Sources */,
+				F6013A352C3099820087757C /* Entity.swift in Sources */,
 				F6013A2B2C307C4C0087757C /* Prefs.swift in Sources */,
 				F6013A292C3078670087757C /* Engine.swift in Sources */,
 			);

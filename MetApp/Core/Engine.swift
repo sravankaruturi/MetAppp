@@ -10,6 +10,7 @@ import MetalKit
 class Engine {
     
     public static var Device: MTLDevice!
+    public static var CommandQueue: MTLCommandQueue!
     
     public static func Setup(device: MTLDevice) {
         self.Device = device

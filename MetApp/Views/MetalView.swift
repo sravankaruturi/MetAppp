@@ -34,7 +34,7 @@ struct MetalView: NSViewRepresentable {
         
         mtkView.framebufferOnly = false
         
-        mtkView.clearColor = MTLClearColor(red: 0, green: 1, blue: 0, alpha: 0)
+        mtkView.clearColor = Prefs.ClearColor
         
         mtkView.drawableSize = mtkView.frame.size
         mtkView.enableSetNeedsDisplay = true
@@ -51,7 +51,6 @@ struct MetalView: NSViewRepresentable {
     class Coordinator : NSObject, MTKViewDelegate {
         
         var parent: MetalView
-        var metalCommandQueue: MTLCommandQueue!
         
         var vertices: [Vertex]!
         
@@ -68,7 +67,7 @@ struct MetalView: NSViewRepresentable {
         
         func setup() {
             
-            self.metalCommandQueue = Engine.Device.makeCommandQueue()!
+            Engine.CommandQueue = Engine.Device.makeCommandQueue()!
             
             createVertices()
             createRenderPipeLineState()
@@ -119,7 +118,7 @@ struct MetalView: NSViewRepresentable {
             
             
             let rpd = MTLRenderPipelineDescriptor()
-            rpd.colorAttachments[0].pixelFormat = .bgra8Unorm
+            rpd.colorAttachments[0].pixelFormat = Prefs.MainPixelFormat
             rpd.vertexFunction = vertexFunction
             rpd.fragmentFunction = fragmentFunction
             rpd.vertexDescriptor = vertexDescriptor
@@ -140,10 +139,10 @@ struct MetalView: NSViewRepresentable {
                 return
             }
             
-            let commandBuffer = metalCommandQueue.makeCommandBuffer()
+            let commandBuffer = Engine.CommandQueue.makeCommandBuffer()
             
             let rpd = view.currentRenderPassDescriptor
-            rpd?.colorAttachments[0].clearColor = MTLClearColorMake(0, 1, 0.5, 1)
+            rpd?.colorAttachments[0].clearColor = Prefs.ClearColor
             rpd?.colorAttachments[0].loadAction = .clear
             rpd?.colorAttachments[0].storeAction = .store
             

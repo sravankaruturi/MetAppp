@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		F6013A232C30705D0087757C /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6013A222C3070590087757C /* Types.swift */; };
 		F6013A292C3078670087757C /* Engine.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6013A282C3078650087757C /* Engine.swift */; };
+		F6013A2B2C307C4C0087757C /* Prefs.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6013A2A2C307C490087757C /* Prefs.swift */; };
 		F65C4C172C2F8BCA007D7F9D /* MetAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65C4C162C2F8BCA007D7F9D /* MetAppApp.swift */; };
 		F65C4C192C2F8BCA007D7F9D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65C4C182C2F8BCA007D7F9D /* ContentView.swift */; };
 		F65C4C1B2C2F8BCA007D7F9D /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65C4C1A2C2F8BCA007D7F9D /* Item.swift */; };
@@ -41,6 +42,7 @@
 /* Begin PBXFileReference section */
 		F6013A222C3070590087757C /* Types.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
 		F6013A282C3078650087757C /* Engine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Engine.swift; sourceTree = "<group>"; };
+		F6013A2A2C307C490087757C /* Prefs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prefs.swift; sourceTree = "<group>"; };
 		F65C4C132C2F8BCA007D7F9D /* MetApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MetApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F65C4C162C2F8BCA007D7F9D /* MetAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetAppApp.swift; sourceTree = "<group>"; };
 		F65C4C182C2F8BCA007D7F9D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 		F6013A242C30777E0087757C /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				F6013A2A2C307C490087757C /* Prefs.swift */,
 				F6013A282C3078650087757C /* Engine.swift */,
 				F6013A222C3070590087757C /* Types.swift */,
 			);
@@ -312,6 +315,7 @@
 				F6013A232C30705D0087757C /* Types.swift in Sources */,
 				F65C4C482C2F9430007D7F9D /* MyShaders.metal in Sources */,
 				F65C4C172C2F8BCA007D7F9D /* MetAppApp.swift in Sources */,
+				F6013A2B2C307C4C0087757C /* Prefs.swift in Sources */,
 				F6013A292C3078670087757C /* Engine.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

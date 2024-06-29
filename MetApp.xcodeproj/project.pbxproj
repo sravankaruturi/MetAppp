@@ -63,6 +63,7 @@
 		F6013A3A2C30AAC30087757C /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		F6013A3C2C30AB3A0087757C /* Node.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
 		F6013A3E2C30ABC90087757C /* Renderable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Renderable.swift; sourceTree = "<group>"; };
+		F6013A402C30ADC20087757C /* Readme.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
 		F65C4C132C2F8BCA007D7F9D /* MetApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MetApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F65C4C162C2F8BCA007D7F9D /* MetAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetAppApp.swift; sourceTree = "<group>"; };
 		F65C4C182C2F8BCA007D7F9D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -152,6 +153,7 @@
 		F65C4C0A2C2F8BCA007D7F9D = {
 			isa = PBXGroup;
 			children = (
+				F6013A402C30ADC20087757C /* Readme.md */,
 				F65C4C152C2F8BCA007D7F9D /* MetApp */,
 				F65C4C292C2F8BCD007D7F9D /* MetAppTests */,
 				F65C4C332C2F8BCD007D7F9D /* MetAppUITests */,

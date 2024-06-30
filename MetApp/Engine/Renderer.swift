@@ -10,10 +10,11 @@ import SwiftUI
 
 class Renderer: NSObject {
     
-    var entity: Entity
+    var scene: Entity
     
     override init() {
-        self.entity = Player()
+        self.scene = Player()
+        
         super.init()
     }
     
@@ -40,9 +41,9 @@ extension Renderer: MTKViewDelegate {
         
         let re = commandBuffer?.makeRenderCommandEncoder(descriptor: rpd!)
         
-        entity.update(deltaTime: 1.0/60)
+        scene.update(deltaTime: 1.0/60)
         
-        entity.render(renderCommandEncoder: re!)
+        scene.render(renderCommandEncoder: re!)
         
         re?.endEncoding()
         

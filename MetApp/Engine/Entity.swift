@@ -21,7 +21,7 @@ class Entity : Node {
     }
     
     var time: Float = 0
-    func update(deltaTime: Float){
+    override func update(deltaTime: Float){
         
         time += deltaTime
         

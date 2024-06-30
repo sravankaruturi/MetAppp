@@ -20,15 +20,7 @@ class Entity : Node {
         mesh.createBuffers(device: Engine.Device)
     }
     
-    var time: Float = 0
     override func update(deltaTime: Float){
-        
-        time += deltaTime
-        
-        position.x = cos(time)
-        position.y = sin(time)
-        scale = simd_float3(repeating: cos(time))
-        rotation = simd_float3(0, 0, time)
         
         updateModelConstants()
         

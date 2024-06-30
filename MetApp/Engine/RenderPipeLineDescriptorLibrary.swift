@@ -13,7 +13,7 @@ enum RenderPipeLineDescriptorType {
 
 protocol RenderPipeLineDescriptor {
     var name: String { get }
-    var renderPipelineDescriptor: MTLRenderPipelineDescriptor { get }
+    var renderPipelineDescriptor: MTLRenderPipelineDescriptor! { get }
 }
 
 class RenderPipeLineDescriptorLibrary {
@@ -40,15 +40,15 @@ public class BasicRenderPipeLineDescriptor: RenderPipeLineDescriptor {
         return "BasicRenderPipeLineDescriptor"
     }
     
-    public var renderPipelineDescriptor: MTLRenderPipelineDescriptor {
-        let rpd = MTLRenderPipelineDescriptor()
+    public var renderPipelineDescriptor: MTLRenderPipelineDescriptor!
+    
+    public init(){
+        renderPipelineDescriptor = MTLRenderPipelineDescriptor()
         
-        rpd.colorAttachments[0].pixelFormat = Prefs.MainPixelFormat
-        rpd.vertexFunction = ShaderLibrary.getVertexShaderFunction(.Basic)
-        rpd.fragmentFunction = ShaderLibrary.getFragmentShaderFunction(.Basic)
-        rpd.vertexDescriptor = VertexDescriptorLibrary.GetVertexDescriptor(.Basic)
-        
-        return rpd
+        renderPipelineDescriptor.colorAttachments[0].pixelFormat = Prefs.MainPixelFormat
+        renderPipelineDescriptor.vertexFunction = ShaderLibrary.getVertexShaderFunction(.Basic)
+        renderPipelineDescriptor.fragmentFunction = ShaderLibrary.getFragmentShaderFunction(.Basic)
+        renderPipelineDescriptor.vertexDescriptor = VertexDescriptorLibrary.GetVertexDescriptor(.Basic)
     }
     
 }

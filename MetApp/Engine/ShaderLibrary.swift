@@ -53,7 +53,7 @@ protocol Shader {
     
     var name: String { get }
     var functionName: String { get }
-    var function: MTLFunction { get }
+    var function: MTLFunction! { get }
     
 }
 
@@ -63,12 +63,11 @@ public struct Basic_VertexShader: Shader {
     
     public var functionName: String = "basic_vertex_shader"
     
-    public var function: MTLFunction {
-        
-        let function = ShaderLibrary.DefaultLibrary.makeFunction(name: functionName)
+    public var function: MTLFunction!
+    
+    init(){
+        function = ShaderLibrary.DefaultLibrary.makeFunction(name: functionName)
         function?.label = name
-        return function!
-        
     }
     
 }
@@ -79,9 +78,10 @@ public struct Basic_FragmentShader: Shader {
     
     public var functionName: String = "basic_fragment_shader"
     
-    public var function: MTLFunction {
-        let function = ShaderLibrary.DefaultLibrary.makeFunction(name: functionName)
+    public var function: MTLFunction!
+    
+    init () {
+        function = ShaderLibrary.DefaultLibrary.makeFunction(name: functionName)
         function?.label = name
-        return function!
     }
 }

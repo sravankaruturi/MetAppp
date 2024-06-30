@@ -13,7 +13,7 @@ enum RenderPipelineStateType {
 
 protocol RenderPipelineState {
     var name: String { get }
-    var renderPipelineState: MTLRenderPipelineState { get }
+    var renderPipelineState: MTLRenderPipelineState! { get }
 }
 
 class RenderPipelineStateLibrary {
@@ -37,15 +37,15 @@ class RenderPipelineStateLibrary {
 public class BasicRenderPipelineState: RenderPipelineState {
     
     public var name = "BasicRenderPipelineState"
-    public var renderPipelineState: MTLRenderPipelineState {
+    public var renderPipelineState: MTLRenderPipelineState!
+    
+    public init(){
         
-        var rps: MTLRenderPipelineState!
         do {
-            rps = try Engine.Device.makeRenderPipelineState(descriptor: RenderPipeLineDescriptorLibrary.getRenderPipeLineDescriptor(.Basic))
+            renderPipelineState = try Engine.Device.makeRenderPipelineState(descriptor: RenderPipeLineDescriptorLibrary.getRenderPipeLineDescriptor(.Basic))
         }catch{
             print("ERROR::CREATE::RENDER PIPELINE STATE::__\(name)__::\(error)")
         }
-        return rps
         
     }
     

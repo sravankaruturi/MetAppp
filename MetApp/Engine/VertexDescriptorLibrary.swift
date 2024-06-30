@@ -31,14 +31,16 @@ class VertexDescriptorLibrary {
 
 protocol VertexDescriptor {
     var name: String { get }
-    var vertexDescriptor: MTLVertexDescriptor { get }
+    var vertexDescriptor: MTLVertexDescriptor! { get }
 }
 
 public struct BasicVertexDescriptor: VertexDescriptor {
     public var name = "BasicVertexDescriptor"
-    public var vertexDescriptor: MTLVertexDescriptor {
+    public var vertexDescriptor: MTLVertexDescriptor!
+    
+    public init(){
         
-        let vertexDescriptor = MTLVertexDescriptor()
+        vertexDescriptor = MTLVertexDescriptor()
         
         // Position
         vertexDescriptor.attributes[0].format = .float3
@@ -51,8 +53,6 @@ public struct BasicVertexDescriptor: VertexDescriptor {
         vertexDescriptor.attributes[1].offset = SIMD3<Float>.size()
         
         vertexDescriptor.layouts[0].stride = Vertex.stride()
-        
-        return vertexDescriptor
         
     }
 }

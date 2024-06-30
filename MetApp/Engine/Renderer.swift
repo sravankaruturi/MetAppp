@@ -17,10 +17,6 @@ class Renderer: NSObject {
         super.init()
     }
     
-    func setupBuffers() {
-        entity.createBuffers(device: Engine.Device)
-    }
-    
 }
 
 extension Renderer: MTKViewDelegate {

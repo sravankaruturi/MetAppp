@@ -16,11 +16,8 @@ class Entity : Node {
     
     init(meshType: MeshTypes) {
         self.meshType = meshType
-    }
-    
-    func createBuffers(device: MTLDevice) {
         mesh = MeshLibrary.getMesh(.Rectangle_Custom)
-        mesh.createBuffers(device: device)
+        mesh.createBuffers(device: Engine.Device)
     }
     
     var time: Float = 0

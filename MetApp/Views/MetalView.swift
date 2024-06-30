@@ -19,16 +19,12 @@ struct MetalView: NSViewRepresentable {
         
         let mtkView = MTKView()
         
+        mtkView.delegate = context.coordinator
+        
         mtkView.preferredFramesPerSecond = 60
         mtkView.enableSetNeedsDisplay = false
+        mtkView.device = Engine.Device
         
-        if let metalDevice = MTLCreateSystemDefaultDevice() {
-            mtkView.device = metalDevice
-            Engine.Setup(device: metalDevice)
-            context.coordinator.setupBuffers()
-        }
-        
-        mtkView.delegate = context.coordinator
         mtkView.framebufferOnly = false
         mtkView.clearColor = Prefs.ClearColor
         mtkView.drawableSize = mtkView.frame.size

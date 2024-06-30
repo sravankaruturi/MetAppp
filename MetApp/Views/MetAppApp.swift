@@ -11,7 +11,11 @@ import SwiftUI
 struct MetAppApp: App {
 
     init() {
-        
+        if let metalDevice = MTLCreateSystemDefaultDevice() {
+            Engine.Setup(device: metalDevice)
+        }else{
+            fatalError("Metal not supported on this device")
+        }
     }
     
     var body: some Scene {

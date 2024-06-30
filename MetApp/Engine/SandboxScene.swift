@@ -4,14 +4,15 @@
 //
 //  Created by Sravan Karuturi on 6/29/24.
 //
+import MetalKit
 
-class SandboxScene: Scene {
+class SandboxScene : EScene {
     
-    var entity: Entity = Player()
+    let entity: Entity = Player()
     
     override func buildScene() {
         
-        addChild(entity)
+        self.addChild(entity)
         
     }
     

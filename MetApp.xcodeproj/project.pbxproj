@@ -31,6 +31,8 @@
 		F65C4C372C2F8BCD007D7F9D /* MetAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65C4C362C2F8BCD007D7F9D /* MetAppUITestsLaunchTests.swift */; };
 		F65C4C442C2F8E19007D7F9D /* MetalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65C4C432C2F8E14007D7F9D /* MetalView.swift */; };
 		F65C4C482C2F9430007D7F9D /* MyShaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = F65C4C472C2F9430007D7F9D /* MyShaders.metal */; };
+		F6A7E88F2C30DD5200EBAB16 /* SandboxScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A7E88D2C30DD5200EBAB16 /* SandboxScene.swift */; };
+		F6A7E8902C30DD5200EBAB16 /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A7E88E2C30DD5200EBAB16 /* Scene.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +82,8 @@
 		F65C4C362C2F8BCD007D7F9D /* MetAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		F65C4C432C2F8E14007D7F9D /* MetalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalView.swift; sourceTree = "<group>"; };
 		F65C4C472C2F9430007D7F9D /* MyShaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = MyShaders.metal; sourceTree = "<group>"; };
+		F6A7E88D2C30DD5200EBAB16 /* SandboxScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandboxScene.swift; sourceTree = "<group>"; };
+		F6A7E88E2C30DD5200EBAB16 /* Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +129,8 @@
 				F6013A3A2C30AAC30087757C /* Player.swift */,
 				F6013A382C30A4080087757C /* MeshLibrary.swift */,
 				F6013A362C309B1A0087757C /* Renderer.swift */,
+				F6A7E88D2C30DD5200EBAB16 /* SandboxScene.swift */,
+				F6A7E88E2C30DD5200EBAB16 /* Scene.swift */,
 				F6013A342C30997A0087757C /* Entity.swift */,
 				F6013A322C30866D0087757C /* RenderPipelineStateLibrary.swift */,
 				F6013A302C3085210087757C /* RenderPipeLineDescriptorLibrary.swift */,
@@ -354,6 +360,8 @@
 			files = (
 				F65C4C442C2F8E19007D7F9D /* MetalView.swift in Sources */,
 				F6013A2D2C307FEE0087757C /* ShaderLibrary.swift in Sources */,
+				F6A7E88F2C30DD5200EBAB16 /* SandboxScene.swift in Sources */,
+				F6A7E8902C30DD5200EBAB16 /* Scene.swift in Sources */,
 				F6013A372C309B1E0087757C /* Renderer.swift in Sources */,
 				F6013A3F2C30ABCC0087757C /* Renderable.swift in Sources */,
 				F65C4C192C2F8BCA007D7F9D /* ContentView.swift in Sources */,

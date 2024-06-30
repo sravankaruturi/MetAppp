@@ -7,7 +7,7 @@
 
 import MetalKit
 
-class Scene : Node {
+class EScene : Node {
     
     override init() {
         super.init()
@@ -15,6 +15,8 @@ class Scene : Node {
     }
     
     func buildScene() {
+        
+        
         
     }
     

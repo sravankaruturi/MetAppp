@@ -10,10 +10,10 @@ import SwiftUI
 
 class Renderer: NSObject {
     
-    var scene: Entity
+    var scene: EScene
     
     override init() {
-        self.scene = Player()
+        self.scene = SandboxScene()
         
         super.init()
     }

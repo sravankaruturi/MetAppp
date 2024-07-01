@@ -17,7 +17,7 @@
 		F6013A352C3099820087757C /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6013A342C30997A0087757C /* Entity.swift */; };
 		F6013A372C309B1E0087757C /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6013A362C309B1A0087757C /* Renderer.swift */; };
 		F6013A392C30A40C0087757C /* MeshLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6013A382C30A4080087757C /* MeshLibrary.swift */; };
-		F6013A3B2C30AAC50087757C /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6013A3A2C30AAC30087757C /* Player.swift */; };
+		F6013A3B2C30AAC50087757C /* Pointer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6013A3A2C30AAC30087757C /* Pointer.swift */; };
 		F6013A3D2C30AB3B0087757C /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6013A3C2C30AB3A0087757C /* Node.swift */; };
 		F6013A3F2C30ABCC0087757C /* Renderable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6013A3E2C30ABC90087757C /* Renderable.swift */; };
 		F6013A432C30B4D80087757C /* Matrices.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6013A422C30B4D30087757C /* Matrices.swift */; };
@@ -37,6 +37,9 @@
 		F6EAFCB02C323C0B00115E31 /* SEKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EAFCAF2C323C0700115E31 /* SEKeyboard.swift */; };
 		F6EAFCB22C32600F00115E31 /* SEKeyCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EAFCB12C32600900115E31 /* SEKeyCode.swift */; };
 		F6EAFCB42C326B5900115E31 /* SEMouse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EAFCB32C326B5700115E31 /* SEMouse.swift */; };
+		F6EAFCB62C335EB900115E31 /* SECamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EAFCB52C335EB600115E31 /* SECamera.swift */; };
+		F6EAFCB82C335F9B00115E31 /* SEDebugCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EAFCB72C335F9800115E31 /* SEDebugCamera.swift */; };
+		F6EAFCBA2C33624E00115E31 /* SECameraManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EAFCB92C33624800115E31 /* SECameraManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,7 +70,7 @@
 		F6013A342C30997A0087757C /* Entity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
 		F6013A362C309B1A0087757C /* Renderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Renderer.swift; sourceTree = "<group>"; };
 		F6013A382C30A4080087757C /* MeshLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeshLibrary.swift; sourceTree = "<group>"; };
-		F6013A3A2C30AAC30087757C /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		F6013A3A2C30AAC30087757C /* Pointer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pointer.swift; sourceTree = "<group>"; };
 		F6013A3C2C30AB3A0087757C /* Node.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
 		F6013A3E2C30ABC90087757C /* Renderable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Renderable.swift; sourceTree = "<group>"; };
 		F6013A402C30ADC20087757C /* Readme.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
@@ -92,6 +95,9 @@
 		F6EAFCAF2C323C0700115E31 /* SEKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SEKeyboard.swift; sourceTree = "<group>"; };
 		F6EAFCB12C32600900115E31 /* SEKeyCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SEKeyCode.swift; sourceTree = "<group>"; };
 		F6EAFCB32C326B5700115E31 /* SEMouse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SEMouse.swift; sourceTree = "<group>"; };
+		F6EAFCB52C335EB600115E31 /* SECamera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SECamera.swift; sourceTree = "<group>"; };
+		F6EAFCB72C335F9800115E31 /* SEDebugCamera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SEDebugCamera.swift; sourceTree = "<group>"; };
+		F6EAFCB92C33624800115E31 /* SECameraManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SECameraManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,9 +138,12 @@
 		F6013A252C3077890087757C /* Engine */ = {
 			isa = PBXGroup;
 			children = (
+				F6EAFCB92C33624800115E31 /* SECameraManager.swift */,
+				F6EAFCB72C335F9800115E31 /* SEDebugCamera.swift */,
+				F6EAFCB52C335EB600115E31 /* SECamera.swift */,
 				F6013A3E2C30ABC90087757C /* Renderable.swift */,
 				F6013A3C2C30AB3A0087757C /* Node.swift */,
-				F6013A3A2C30AAC30087757C /* Player.swift */,
+				F6013A3A2C30AAC30087757C /* Pointer.swift */,
 				F6013A382C30A4080087757C /* MeshLibrary.swift */,
 				F6013A362C309B1A0087757C /* Renderer.swift */,
 				F6A7E88D2C30DD5200EBAB16 /* SandboxScene.swift */,
@@ -386,8 +395,10 @@
 				F6013A372C309B1E0087757C /* Renderer.swift in Sources */,
 				F6013A3F2C30ABCC0087757C /* Renderable.swift in Sources */,
 				F65C4C192C2F8BCA007D7F9D /* ContentView.swift in Sources */,
-				F6013A3B2C30AAC50087757C /* Player.swift in Sources */,
+				F6EAFCBA2C33624E00115E31 /* SECameraManager.swift in Sources */,
+				F6013A3B2C30AAC50087757C /* Pointer.swift in Sources */,
 				F65C4C1B2C2F8BCA007D7F9D /* Item.swift in Sources */,
+				F6EAFCB62C335EB900115E31 /* SECamera.swift in Sources */,
 				F6013A2F2C3083D30087757C /* VertexDescriptorLibrary.swift in Sources */,
 				F6013A392C30A40C0087757C /* MeshLibrary.swift in Sources */,
 				F6013A432C30B4D80087757C /* Matrices.swift in Sources */,
@@ -397,6 +408,7 @@
 				F6013A312C30852A0087757C /* RenderPipeLineDescriptorLibrary.swift in Sources */,
 				F6EAFCB42C326B5900115E31 /* SEMouse.swift in Sources */,
 				F6EAFCAD2C3239A200115E31 /* SEGameView.swift in Sources */,
+				F6EAFCB82C335F9B00115E31 /* SEDebugCamera.swift in Sources */,
 				F65C4C482C2F9430007D7F9D /* MyShaders.metal in Sources */,
 				F65C4C172C2F8BCA007D7F9D /* MetAppApp.swift in Sources */,
 				F6EAFCB02C323C0B00115E31 /* SEKeyboard.swift in Sources */,

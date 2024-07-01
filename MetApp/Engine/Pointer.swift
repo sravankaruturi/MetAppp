@@ -7,7 +7,7 @@
 
 import MetalKit
 
-class Player : Entity {
+class Pointer : Entity {
     
     init() {
         

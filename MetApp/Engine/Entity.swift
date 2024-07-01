@@ -16,7 +16,7 @@ class Entity : Node {
     
     init(meshType: MeshTypes) {
         self.meshType = meshType
-        mesh = MeshLibrary.getMesh(.Rectangle_Custom)
+        mesh = MeshLibrary.getMesh(meshType)
         mesh.createBuffers(device: Engine.Device)
     }
     

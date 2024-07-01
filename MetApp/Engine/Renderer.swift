@@ -10,20 +10,27 @@ import SwiftUI
 
 class Renderer: NSObject {
     
+    public static var ScreenSize = SIMD2<Float>(x: 0, y: 0)
+    
     var scene: EScene
     
     override init() {
         self.scene = SandboxScene()
-        
         super.init()
+        // TODO: Does this work fine without the calling updateScreenSize here?
+        
     }
     
 }
 
 extension Renderer: MTKViewDelegate {
     
+    public func updateScreenSize(view: MTKView){
+        Renderer.ScreenSize = SIMD2<Float>(x: Float(view.bounds.size.width), y: Float(view.bounds.size.height))
+    }
+    
     func mtkView(_ view: MTKView, drawableSizeWillChange size: CGSize) {
-        
+        updateScreenSize(view: view)
     }
     
     func draw(in view: MTKView) {
@@ -51,4 +58,5 @@ extension Renderer: MTKViewDelegate {
         commandBuffer?.commit()
         
     }
+    
 }

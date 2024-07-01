@@ -33,6 +33,10 @@
 		F65C4C482C2F9430007D7F9D /* MyShaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = F65C4C472C2F9430007D7F9D /* MyShaders.metal */; };
 		F6A7E88F2C30DD5200EBAB16 /* SandboxScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A7E88D2C30DD5200EBAB16 /* SandboxScene.swift */; };
 		F6A7E8902C30DD5200EBAB16 /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A7E88E2C30DD5200EBAB16 /* Scene.swift */; };
+		F6EAFCAD2C3239A200115E31 /* SEGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EAFCAC2C3239A000115E31 /* SEGameView.swift */; };
+		F6EAFCB02C323C0B00115E31 /* SEKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EAFCAF2C323C0700115E31 /* SEKeyboard.swift */; };
+		F6EAFCB22C32600F00115E31 /* SEKeyCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EAFCB12C32600900115E31 /* SEKeyCode.swift */; };
+		F6EAFCB42C326B5900115E31 /* SEMouse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EAFCB32C326B5700115E31 /* SEMouse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +88,10 @@
 		F65C4C472C2F9430007D7F9D /* MyShaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = MyShaders.metal; sourceTree = "<group>"; };
 		F6A7E88D2C30DD5200EBAB16 /* SandboxScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandboxScene.swift; sourceTree = "<group>"; };
 		F6A7E88E2C30DD5200EBAB16 /* Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
+		F6EAFCAC2C3239A000115E31 /* SEGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SEGameView.swift; sourceTree = "<group>"; };
+		F6EAFCAF2C323C0700115E31 /* SEKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SEKeyboard.swift; sourceTree = "<group>"; };
+		F6EAFCB12C32600900115E31 /* SEKeyCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SEKeyCode.swift; sourceTree = "<group>"; };
+		F6EAFCB32C326B5700115E31 /* SEMouse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SEMouse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +159,7 @@
 		F6013A272C3077A70087757C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F6EAFCAC2C3239A000115E31 /* SEGameView.swift */,
 				F65C4C162C2F8BCA007D7F9D /* MetAppApp.swift */,
 				F65C4C432C2F8E14007D7F9D /* MetalView.swift */,
 				F65C4C182C2F8BCA007D7F9D /* ContentView.swift */,
@@ -190,6 +199,7 @@
 		F65C4C152C2F8BCA007D7F9D /* MetApp */ = {
 			isa = PBXGroup;
 			children = (
+				F6EAFCAE2C323BFE00115E31 /* Input */,
 				F6013A412C30B4CB0087757C /* Math */,
 				F6013A242C30777E0087757C /* Core */,
 				F6013A252C3077890087757C /* Engine */,
@@ -226,6 +236,16 @@
 				F65C4C362C2F8BCD007D7F9D /* MetAppUITestsLaunchTests.swift */,
 			);
 			path = MetAppUITests;
+			sourceTree = "<group>";
+		};
+		F6EAFCAE2C323BFE00115E31 /* Input */ = {
+			isa = PBXGroup;
+			children = (
+				F6EAFCB32C326B5700115E31 /* SEMouse.swift */,
+				F6EAFCB12C32600900115E31 /* SEKeyCode.swift */,
+				F6EAFCAF2C323C0700115E31 /* SEKeyboard.swift */,
+			);
+			path = Input;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -358,6 +378,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6EAFCB22C32600F00115E31 /* SEKeyCode.swift in Sources */,
 				F65C4C442C2F8E19007D7F9D /* MetalView.swift in Sources */,
 				F6013A2D2C307FEE0087757C /* ShaderLibrary.swift in Sources */,
 				F6A7E88F2C30DD5200EBAB16 /* SandboxScene.swift in Sources */,
@@ -374,8 +395,11 @@
 				F6013A332C3086760087757C /* RenderPipelineStateLibrary.swift in Sources */,
 				F6013A3D2C30AB3B0087757C /* Node.swift in Sources */,
 				F6013A312C30852A0087757C /* RenderPipeLineDescriptorLibrary.swift in Sources */,
+				F6EAFCB42C326B5900115E31 /* SEMouse.swift in Sources */,
+				F6EAFCAD2C3239A200115E31 /* SEGameView.swift in Sources */,
 				F65C4C482C2F9430007D7F9D /* MyShaders.metal in Sources */,
 				F65C4C172C2F8BCA007D7F9D /* MetAppApp.swift in Sources */,
+				F6EAFCB02C323C0B00115E31 /* SEKeyboard.swift in Sources */,
 				F6013A352C3099820087757C /* Entity.swift in Sources */,
 				F6013A2B2C307C4C0087757C /* Prefs.swift in Sources */,
 				F6013A292C3078670087757C /* Engine.swift in Sources */,

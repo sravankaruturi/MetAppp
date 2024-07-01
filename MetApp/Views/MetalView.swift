@@ -15,24 +15,25 @@ struct MetalView: NSViewRepresentable {
         Renderer()
     }
     
-    func makeNSView(context: NSViewRepresentableContext<MetalView>) -> MTKView {
+    func makeNSView(context: NSViewRepresentableContext<MetalView>) -> SEGameView {
         
-        let mtkView = MTKView()
+        let gameView = SEGameView()
         
-        mtkView.delegate = context.coordinator
+        gameView.delegate = context.coordinator
         
-        mtkView.preferredFramesPerSecond = 60
-        mtkView.enableSetNeedsDisplay = false
-        mtkView.device = Engine.Device
+        gameView.preferredFramesPerSecond = 60
+        gameView.enableSetNeedsDisplay = false
+        gameView.device = Engine.Device
         
-        mtkView.framebufferOnly = false
-        mtkView.clearColor = Prefs.ClearColor
-        mtkView.drawableSize = mtkView.frame.size
+        gameView.framebufferOnly = false
+        gameView.clearColor = Prefs.ClearColor
+        gameView.drawableSize = gameView.frame.size
         
-        return mtkView
+        return gameView
+        
     }
     
-    func updateNSView(_ nsView: MTKView, context: NSViewRepresentableContext<MetalView>) {
+    func updateNSView(_ nsView: SEGameView, context: NSViewRepresentableContext<MetalView>) {
         
     }
 }

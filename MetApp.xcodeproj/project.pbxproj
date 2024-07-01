@@ -40,6 +40,9 @@
 		F6EAFCB62C335EB900115E31 /* SECamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EAFCB52C335EB600115E31 /* SECamera.swift */; };
 		F6EAFCB82C335F9B00115E31 /* SEDebugCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EAFCB72C335F9800115E31 /* SEDebugCamera.swift */; };
 		F6EAFCBA2C33624E00115E31 /* SECameraManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EAFCB92C33624800115E31 /* SECameraManager.swift */; };
+		F6EAFCBD2C336E0800115E31 /* Ext+Float.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EAFCBC2C336E0400115E31 /* Ext+Float.swift */; };
+		F6EAFCBF2C33737B00115E31 /* SECube.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EAFCBE2C33737600115E31 /* SECube.swift */; };
+		F6EAFCC12C33751700115E31 /* DepthStencilStateLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EAFCC02C33750F00115E31 /* DepthStencilStateLibrary.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +101,9 @@
 		F6EAFCB52C335EB600115E31 /* SECamera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SECamera.swift; sourceTree = "<group>"; };
 		F6EAFCB72C335F9800115E31 /* SEDebugCamera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SEDebugCamera.swift; sourceTree = "<group>"; };
 		F6EAFCB92C33624800115E31 /* SECameraManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SECameraManager.swift; sourceTree = "<group>"; };
+		F6EAFCBC2C336E0400115E31 /* Ext+Float.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ext+Float.swift"; sourceTree = "<group>"; };
+		F6EAFCBE2C33737600115E31 /* SECube.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SECube.swift; sourceTree = "<group>"; };
+		F6EAFCC02C33750F00115E31 /* DepthStencilStateLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepthStencilStateLibrary.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +144,8 @@
 		F6013A252C3077890087757C /* Engine */ = {
 			isa = PBXGroup;
 			children = (
+				F6EAFCC02C33750F00115E31 /* DepthStencilStateLibrary.swift */,
+				F6EAFCBE2C33737600115E31 /* SECube.swift */,
 				F6EAFCB92C33624800115E31 /* SECameraManager.swift */,
 				F6EAFCB72C335F9800115E31 /* SEDebugCamera.swift */,
 				F6EAFCB52C335EB600115E31 /* SECamera.swift */,
@@ -179,6 +187,7 @@
 		F6013A412C30B4CB0087757C /* Math */ = {
 			isa = PBXGroup;
 			children = (
+				F6EAFCBC2C336E0400115E31 /* Ext+Float.swift */,
 				F6013A422C30B4D30087757C /* Matrices.swift */,
 			);
 			path = Math;
@@ -391,6 +400,7 @@
 				F65C4C442C2F8E19007D7F9D /* MetalView.swift in Sources */,
 				F6013A2D2C307FEE0087757C /* ShaderLibrary.swift in Sources */,
 				F6A7E88F2C30DD5200EBAB16 /* SandboxScene.swift in Sources */,
+				F6EAFCBD2C336E0800115E31 /* Ext+Float.swift in Sources */,
 				F6A7E8902C30DD5200EBAB16 /* Scene.swift in Sources */,
 				F6013A372C309B1E0087757C /* Renderer.swift in Sources */,
 				F6013A3F2C30ABCC0087757C /* Renderable.swift in Sources */,
@@ -400,6 +410,7 @@
 				F65C4C1B2C2F8BCA007D7F9D /* Item.swift in Sources */,
 				F6EAFCB62C335EB900115E31 /* SECamera.swift in Sources */,
 				F6013A2F2C3083D30087757C /* VertexDescriptorLibrary.swift in Sources */,
+				F6EAFCC12C33751700115E31 /* DepthStencilStateLibrary.swift in Sources */,
 				F6013A392C30A40C0087757C /* MeshLibrary.swift in Sources */,
 				F6013A432C30B4D80087757C /* Matrices.swift in Sources */,
 				F6013A232C30705D0087757C /* Types.swift in Sources */,
@@ -408,6 +419,7 @@
 				F6013A312C30852A0087757C /* RenderPipeLineDescriptorLibrary.swift in Sources */,
 				F6EAFCB42C326B5900115E31 /* SEMouse.swift in Sources */,
 				F6EAFCAD2C3239A200115E31 /* SEGameView.swift in Sources */,
+				F6EAFCBF2C33737B00115E31 /* SECube.swift in Sources */,
 				F6EAFCB82C335F9B00115E31 /* SEDebugCamera.swift in Sources */,
 				F65C4C482C2F9430007D7F9D /* MyShaders.metal in Sources */,
 				F65C4C172C2F8BCA007D7F9D /* MetAppApp.swift in Sources */,

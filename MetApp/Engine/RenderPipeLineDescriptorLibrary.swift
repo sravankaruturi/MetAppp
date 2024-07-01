@@ -46,6 +46,7 @@ public class BasicRenderPipeLineDescriptor: RenderPipeLineDescriptor {
         renderPipelineDescriptor = MTLRenderPipelineDescriptor()
         
         renderPipelineDescriptor.colorAttachments[0].pixelFormat = Prefs.MainPixelFormat
+        renderPipelineDescriptor.depthAttachmentPixelFormat = Prefs.MainDepthPixelFormat
         renderPipelineDescriptor.vertexFunction = ShaderLibrary.getVertexShaderFunction(.Basic)
         renderPipelineDescriptor.fragmentFunction = ShaderLibrary.getFragmentShaderFunction(.Basic)
         renderPipelineDescriptor.vertexDescriptor = VertexDescriptorLibrary.GetVertexDescriptor(.Basic)

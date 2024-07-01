@@ -26,7 +26,10 @@ struct MetalView: NSViewRepresentable {
         gameView.device = Engine.Device
         
         gameView.framebufferOnly = false
+        
         gameView.clearColor = Prefs.ClearColor
+        gameView.depthStencilPixelFormat = Prefs.MainDepthPixelFormat
+        
         gameView.drawableSize = gameView.frame.size
         
         return gameView

@@ -56,4 +56,30 @@ extension matrix_float4x4 {
         self = matrix_multiply(self, result)
     }
     
+    static func perspective(_ fov: Float, _ aspectRatio: Float, _ near: Float, _ far: Float) -> matrix_float4x4 {
+        
+        // Aspect Ratio
+        // Perspective
+        // Scale z to normalize.
+        
+        let fov = fov.toRadians
+        
+        let t = tan(fov) * 0.5
+        
+        let x = 1 / ( aspectRatio * t)
+        let y = 1 / t
+        let z = -(far + near) / (far - near)
+        let w = -(2 * far * near) / (far - near)
+        
+        var result = matrix_identity_float4x4
+        
+        result.columns.0.x = x
+        result.columns.1.y = y
+        result.columns.2.z = z
+        result.columns.2.w = -1
+        result.columns.3.z = w
+        
+        return result
+    }
+    
 }

@@ -11,6 +11,9 @@ import SwiftUI
 class Renderer: NSObject {
     
     public static var ScreenSize = SIMD2<Float>(x: 0, y: 0)
+    public static var AspectRatio: Float {
+        return ScreenSize.x / ScreenSize.y
+    }
     
     var scene: EScene
     

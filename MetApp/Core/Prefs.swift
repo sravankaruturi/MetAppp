@@ -22,5 +22,6 @@ class Prefs {
     
     public static var ClearColor: MTLClearColor = ClearColors.green
     public static var MainPixelFormat: MTLPixelFormat = .bgra8Unorm
+    public static var MainDepthPixelFormat: MTLPixelFormat = .depth32Float
     
 }

@@ -9,22 +9,24 @@ import MetalKit
 class SandboxScene : EScene {
     
     var debugCamera = SEDebugCamera()
+    var cube = SECube()
     
     override func buildScene() {
         
         addCamera(debugCamera)
+        debugCamera.position.z += 5
         
-        let count = 5
+        addChild(cube)
         
-        for y in -count..<count {
-            for x in -count..<count {
-                let player = Pointer()
-                player.position.y = Float(Float(y) + 0.5)/Float(count)
-                player.position.x = Float(Float(x) + 0.5)/Float(count)
-                player.scale = SIMD3<Float>(0.1, 0.1, 0.1)
-                addChild(player)
-            }
-        }
+        
+    }
+    
+    override func update(deltaTime: Float) {
+        
+        cube.rotation.x += deltaTime
+        cube.rotation.y += deltaTime
+        
+        super.update(deltaTime: deltaTime)
         
     }
     

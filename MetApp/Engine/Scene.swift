@@ -28,6 +28,7 @@ class EScene : Node {
     
     func updateSceneConstants() {
         sceneConstants.viewMatrix = cameraManager.currentCamera.viewMatrix
+        sceneConstants.projectionMatrix = cameraManager.currentCamera.projectionMatrix
     }
     
     func updateCameras(deltaTime: Float) {
@@ -42,6 +43,7 @@ class EScene : Node {
     }
     
     override func render(renderCommandEncoder: any MTLRenderCommandEncoder) {
+        
         renderCommandEncoder.setVertexBytes(&sceneConstants, length: SceneConstants.stride(), index: 1)
         
         super.render(renderCommandEncoder: renderCommandEncoder)

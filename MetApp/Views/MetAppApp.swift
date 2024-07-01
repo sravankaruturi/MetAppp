@@ -20,7 +20,18 @@ struct MetAppApp: App {
     
     var body: some Scene {
         WindowGroup {
-            MetalView()
+            ZStack{
+                MetalView()
+                VStack{
+                    HStack{
+                        Spacer()
+                        Text("Metal App")
+                            .padding()
+                            .background(Color.white)
+                    }
+                    Spacer()
+                }
+            }
         }
         
     }

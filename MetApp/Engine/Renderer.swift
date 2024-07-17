@@ -37,28 +37,27 @@ extension Renderer: MTKViewDelegate {
     }
     
     func draw(in view: MTKView) {
-        
-        guard let drawable = view.currentDrawable else {
+        guard let drawable = view.currentDrawable,
+              let commandBuffer = Engine.CommandQueue.makeCommandBuffer(),
+              let rpd = view.currentRenderPassDescriptor else {
             return
         }
-        
-        let commandBuffer = Engine.CommandQueue.makeCommandBuffer()
-        
-        let rpd = view.currentRenderPassDescriptor
-        rpd?.colorAttachments[0].clearColor = Prefs.ClearColor
-        rpd?.colorAttachments[0].loadAction = .clear
-        rpd?.colorAttachments[0].storeAction = .store
-        
-        let re = commandBuffer?.makeRenderCommandEncoder(descriptor: rpd!)
-        
+
+        rpd.colorAttachments[0].clearColor = Prefs.ClearColor
+        rpd.colorAttachments[0].loadAction = .clear
+        rpd.colorAttachments[0].storeAction = .store
+
+        guard let re = commandBuffer.makeRenderCommandEncoder(descriptor: rpd) else {
+            return
+        }
+
         scene.update(deltaTime: 1.0/60)
-        
-        scene.render(renderCommandEncoder: re!)
-        
-        re?.endEncoding()
-        
-        commandBuffer?.present(drawable)
-        commandBuffer?.commit()
+        scene.render(renderCommandEncoder: re)
+
+        re.endEncoding()
+
+        commandBuffer.present(drawable)
+        commandBuffer.commit()
         
     }
     

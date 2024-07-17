@@ -9,8 +9,12 @@ import SwiftUI
 
 struct ContentView: View {
     
+    @State private var size: CGSize = .zero
+    
     var body: some View {
-        Text("Testing")
+    
+        MetalView()
+        
     }
 
 }

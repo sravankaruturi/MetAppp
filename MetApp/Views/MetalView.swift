@@ -9,14 +9,9 @@ import MetalKit
 import SwiftUI
 
 
-struct MetalView: NSViewRepresentable {
+struct MetalView: UIViewRepresentable {
     
-    func makeCoordinator() -> Renderer {
-        Renderer()
-    }
-    
-    func makeNSView(context: NSViewRepresentableContext<MetalView>) -> SEGameView {
-        
+    func makeUIView(context: Context) -> MTKView {
         let gameView = SEGameView()
         
         gameView.delegate = context.coordinator
@@ -33,10 +28,13 @@ struct MetalView: NSViewRepresentable {
         gameView.drawableSize = gameView.frame.size
         
         return gameView
+    }
+    
+    func updateUIView(_ uiView: MTKView, context: Context) {
         
     }
     
-    func updateNSView(_ nsView: SEGameView, context: NSViewRepresentableContext<MetalView>) {
-        
+    func makeCoordinator() -> Renderer {
+        Renderer()
     }
 }

@@ -12,6 +12,8 @@ class Entity : Node {
     var mesh: Mesh!
     var meshType: MeshTypes
     
+    private var material: Material = Material()
+    
     var modelConstants: ModelConstants = ModelConstants()
     
     init(meshType: MeshTypes) {
@@ -44,9 +46,24 @@ extension Entity : Renderable {
         
         renderCommandEncoder.setRenderPipelineState(RenderPipelineStateLibrary.getRenderPipelineState(.Basic))
         renderCommandEncoder.setDepthStencilState(DepthStencilStateLibrary.DepthStencilState(.Less))
+        
         renderCommandEncoder.setVertexBuffer(vertexBuffer, offset: 0, index: 0)
         renderCommandEncoder.setVertexBytes(&modelConstants, length: ModelConstants.stride(), index: 2)
+        
+        renderCommandEncoder.setFragmentBytes(&material, length: Material.stride(), index: 1)
+        
         renderCommandEncoder.drawPrimitives(type: .triangle, vertexStart: 0, vertexCount: mesh.vertexCount)
+    }
+    
+}
+
+// Material Properties
+
+extension Entity {
+    
+    public func setColor(_ color: SIMD4<Float>) {
+        self.material.color = color
+        self.material.useMatrialColor = true
     }
     
 }
